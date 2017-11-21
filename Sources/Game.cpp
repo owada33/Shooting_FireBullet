@@ -54,6 +54,12 @@ void Update()
 
     // 雲の描画
     DrawImage("cloud1.png", cloudPos);
+    
+    //雲の移動（実装、HW16A033 大和田 滉恵）
+    cloudPos.x += 50 * Time::deltaTime;
+    if (cloudPos.x > 310){
+        cloudPos.x = -600;
+    }
 
     // 弾の描画
     if (bulletPos.x > -999) {
