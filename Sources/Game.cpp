@@ -47,12 +47,12 @@ void Update()
 
     // 弾の移動
     if (bulletPos.x > -999) {
-        bulletPos.x += 10 * Time::deltaTime;
+        bulletPos.x += 1000 * Time::deltaTime;
 
         // ターゲットと弾の当たり判定
         Rect bulletRect(bulletPos, Vector2(32, 20));
         if (targetRect.Overlaps(bulletRect)) {
-            score += 100;         // スコアの加算 // HW16A071 黒田達範
+            score += 100;         // スコアの加算 HW16A028 大岩竜也
             bulletPos.x = -999; // 弾を発射可能な状態に戻す
         }
         if(bulletPos.x > 360){
@@ -86,8 +86,9 @@ void Update()
     FillRect(targetRect, Color::red);
 
     // スコアの描画
-    SetFont("nicoca_v1.ttf", 20.0f);
+    SetFont("nicoca_v1.ttf", 80.0f);　// HW16A028 大岩竜也
     DrawText(FormatString("%05d", score), Vector2(-319, 199), Color::black);// HW16A071 黒田達範
     DrawText(FormatString("%05d", score), Vector2(-320, 200), Color::white);// HW16A071 黒田達範
+    
 }
 
